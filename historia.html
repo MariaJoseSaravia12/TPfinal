@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"  href="./css/index.css" >
+  <link rel="stylesheet"  href="./css/historia.css" >  
+  <link rel="icon" href="./assets/img/fondo.jpg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <title>Historia</title>
+</head>
+<body>
+  <nav></nav>
+  <header>
+    <h1 class="titulo-principal">HISTORIA DE LA PROGRAMACION</h1>
+  </header>
+  <main>
+    <!--Primer tarjeta-->
+   <div class="card-hist">
+    <img src="./assets/img/1-800x534.jpg" alt="computadora antigua">
+    <div class="card-text-section">
+      <h2 class="card-title">El principio de la historia de la programación</h2>
+      <p class="text-hist">
+        El primer lenguaje de programación fue un algoritmo creado por Ada Lovelace en 1883.
+        <br>        
+        Ada Lovelace creó este algoritmo para el motor analítico de Charles Babbage.
+        <br>         
+        El propósito de este algoritmo era calcular los números de Bernoulli.
+        <br>          
+        En 1936, por primera vez, los códigos informáticos fueron especializados por Alonzo Church y Alan Turing.                
+        <br>          
+        Church expresó el cálculo lambda de forma formulativa.                                    
+      </p>
+    </div>
+   </div>
+   <!--segunada tarjeta-->
+   <div class="card-hist">
+    <div class="card-text-section">
+      <h2 class="card-title">Lenguaje de ensamblaje</h2>
+   
+       <p class="text-hist ">Los primeros ordenadores modernos (alimentados eléctricamente) fueron creados en los años 40.
+
+        Estas computadoras estaban limitadas en velocidad y capacidad de memoria.
+    
+        <br>Debido a estas limitaciones, los programadores se vieron obligados a escribir manualmente programas en lenguaje ensamblador.
+    
+        Siendo un lenguaje de programación de bajo nivel, era una tarea difícil programarlo manualmente.
+    
+        Los programadores se dieron cuenta entonces de la necesidad de lenguajes de alto nivel para disminuir el esfuerzo que se requería para escribir los programas en lenguaje ensamblador manualmente.
+    
+       </p> 
+    </div>
+    <img src="./assets/img/nerdpol-ken-den.webp" alt="computadora antigua">
+  </div>
+  <!--tercera tarjeta-->
+  <div class="card-hist">
+    <img src="./assets/img/img-historia.jpg" alt="computadora antigua">
+   <div class="card-text-section">
+       <h2 class="card-title">Los primeros lenguajes de programación</h2>
+
+         <div style="width: 90%;">
+       <p style="color: #2F3645;">
+           FORmulaTRANslation es el lenguaje de programación más antiguo y que continúa en uso. Creada por John Backus en 1957, esta herramienta fue desarrollada para la computación científica de alto nivel, matemáticas y estadísticas.<br>
+               A día de hoy, este lenguaje se sigue usando en la industria automovilística, aeroespacial, gubernamental y la investigación. Por ejemplo, es muy útil para el pronóstico de los servicios meteorológicos.
+       </p>
+       <p style="color: #2F3645;">
+           En 1959 se desarrollo Cobol, que está detrás de la mayoría de los sistemas de transacciones de negocio de los procesos de las tarjetas de crédito, ATMs (Modo de Transferencia Asíncrona), telefonía, sistemas hospitalarios, gobierno, sistemas automatizados y señales de tráfico.<br>
+               El desarrollo de Cobol, creado por Grace Murray Hopper, muestra un lenguaje famipar y uniforme para transacciones empresariales. Por ejemplo, lo usan en el servicio postal estadounidense
+       </p>
+       <p style="color: #2F3645;">
+           En 1964 se creo Basic, que fue diseñado como un lenguaje simppficado para aquellos que no tenían como base fuertes conocimientos técnicos o matemáticos. 
+       </p>
+       <p style="color: #2F3645;">
+           Entre 1969 y 1973 se crea <strong>C</strong>,a manos de Dennis Ritchie para los laboratorios Bell Telephone para usarlos en el sistema Unix. Se le llamó «C» porque sus características derivaban de un lenguaje anterior llamado «B».
+       </p>
+       <p style="color: #2F3645;">
+           En los laboratorios Bells, Bjarne Stroustrup modificó el lenguaje C al C++, creando lo que muchos consideran el lenguaje de programación más popular que ha existido nunca. Además, ha sido listado en lo alto de los top ten de los lenguajes de programación desde 1986 y archivado en el Hall of Fame en 2003. Hoy en día es usado por Firefox, Office y Adobe PDF Reader
+           <br> Esto dio el puntapie a que se sigan perfeccionando los lenguajes hasta llegar al os lenguajes de hoy en dia
+       </p>
+   </div>    
+   </div>
+</div>
+  </main>
+ <article class="contenedorVideo">
+  <h2>Hablemos un poquito mas...</h2>
+  <section class="container">
+    <video width="100%" poster="./assets/img/img-video.jpg">
+      <source src="./assets/videos/historia-Comp.mp4" type="video/mp4">
+      <source src="./assets/videos/historia-Comp.ogv" type="video/ogv">
+    </video>
+    <div class="barra">
+      <div class="botonera">
+        <button  onclick="reproducir()" class="botonesVideo">PLAY
+          <img src="./assets/img/play.svg" alt="Inicio del video">
+        </button>
+        <button onclick="pausar()" class="botonesVideo">PAUSE
+          <img src="./assets/img/pausa.svg" alt="Pausa del video">
+        </button>  
+        <button onclick="mutear()" class="botonesVideo" id="muteButton">
+          <i class="fa-solid fa-volume-xmark" style="display: none;" id="iconMute"></i>
+          <i class="fa-solid fa-volume-high" id="iconUnmute"></i>
+      </button>
+      </div>
+      <div class="mostrarTiempo">
+      <p>Duración <span id="duracion"></span></p>
+      <p id="mostrarTiempoActual" style="display: none;">Tiempo actual <span id="actual"></span></p>
+    </div>
+       
+    </div>
+  </section>
+ </article>
+ <footer></footer>
+ <script src="./Js/historia.js" ></script>
+ <script src="./Js/index.js" ></script>
+ 
+</body>
+</html>

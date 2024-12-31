@@ -1,0 +1,40 @@
+main{
+  display: block;
+}
+.juego {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.cajas{
+  display: flex;
+  flex-direction: row;
+}
+.caja{
+  width: 275px;
+  height: 400px;
+  background-color: var(--sombraGris);
+  color: var(--colorBlancoFondoSombras);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--sombraNegra);
+  text-align: center;
+}
+#cajaImagenes{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  margin: 40px;
+}
+.reinicio{
+    display: flex;
+    margin: auto;
+    padding: 10px 100px;
+    border: none;
+    border-radius: 0px;
+    background-color: var(--colorAzul);
+    color: var(--colorBlancoFondoSombras);
+    text-transform: uppercase;
+    font-weight: 300;
+}
