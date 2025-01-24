@@ -1,4 +1,10 @@
 /*cards*/
+#headerHistoria{
+    background-image: url(../assets/img/historia-programacion.jpg);
+    position: relative;
+    height: 70vh;
+}
+
 .card-hist{
   display: flex;
   justify-content: space-between;
@@ -45,12 +51,13 @@
 .botonera {
   display: flex;
   gap: 20px;
+  perspective: 800px;
 }
 #play, #pause {
   width: 80px;
 }
 .botonesVideo {
-  box-shadow: 2px 2px var(--sombraGris);
+  box-shadow: 3px 3px var(--sombraGris);
   padding: 10px 15px;
   text-decoration: none;
   background-color: var(--colorBlancoFondoSombras);
@@ -65,5 +72,18 @@
   color: var(--colorBlancoFondoSombras);
   display: flex;
   flex-direction: column;
- 
+
+}
+/*animacion de los botones*/
+
+.botonesVideo:active {
+  transform: translate3d(3px, 3px, -3px);  
+  box-shadow: none;
+  transition: all 0.1s;
+}
+/*numeros del video*/
+.mostrarTiempo p, #actual, #duracion{
+  font-size: 16px;   
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;  
 }

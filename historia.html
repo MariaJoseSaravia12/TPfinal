@@ -9,11 +9,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <title>Historia</title>
 </head>
-<body>
+<body onscroll="mostrarNav()">
   <nav></nav>
-  <header>
-    <h1 class="titulo-principal">HISTORIA DE LA PROGRAMACION</h1>
-  </header>
+  <header id="headerHistoria">
+    <h1 class="titulo-principal fondo-azul">HISTORIA DE LA PROGRAMACION</h1>
+  </header >
   <main>
     <!--Primer tarjeta-->
    <div class="card-hist">
@@ -85,33 +85,35 @@
   <h2>Hablemos un poquito mas...</h2>
   <section class="container">
     <video width="100%" poster="./assets/img/img-video.jpg">
-      <source src="./assets/videos/historia-Comp.mp4" type="video/mp4">
-      <source src="./assets/videos/historia-Comp.ogv" type="video/ogv">
+        <source src="./assets/videos/historia-Comp.mp4" type="video/mp4">
+        <source src="./assets/videos/historia-Comp.ogv" type="video/ogv">
     </video>
+
     <div class="barra">
-      <div class="botonera">
-        <button  onclick="reproducir()" class="botonesVideo">PLAY
-          <img src="./assets/img/play.svg" alt="Inicio del video">
-        </button>
-        <button onclick="pausar()" class="botonesVideo">PAUSE
-          <img src="./assets/img/pausa.svg" alt="Pausa del video">
-        </button>  
-        <button onclick="mutear()" class="botonesVideo" id="muteButton">
-          <i class="fa-solid fa-volume-xmark" style="display: none;" id="iconMute"></i>
-          <i class="fa-solid fa-volume-high" id="iconUnmute"></i>
-      </button>
-      </div>
-      <div class="mostrarTiempo">
-      <p>Duración <span id="duracion"></span></p>
-      <p id="mostrarTiempoActual" style="display: none;">Tiempo actual <span id="actual"></span></p>
-    </div>
-       
-    </div>
-  </section>
+        <div class="botonera">
+            <button onclick="reproducir()" class="botonesVideo">PLAY
+                <img src="./assets/img/play.svg" alt="Inicio del video">
+            </button>
+            <button onclick="pausar()" class="botonesVideo">PAUSE
+                <img src="./assets/img/pausa.svg" alt="Pausa del video">
+            </button>  
+            <button onclick="mutear()" class="botonesVideo" id="muteButton">
+                <i class="fa-solid fa-volume-xmark" style="display: none;" id="iconMute"></i>
+                <i class="fa-solid fa-volume-high" id="iconUnmute"></i>
+            </button>
+        </div>
+
+        <div class="mostrarTiempo" >
+            <p >Duración video <span id="duracion">00:00</span></p>
+            <p id="mostrarTiempoActual" style="display: none;"><span id="actual">00:00</span></p>
+        </div>
+    </div>    
+   </section>
  </article>
  <footer></footer>
- <script src="./Js/historia.js" ></script>
  <script src="./Js/index.js" ></script>
+ <script src="./Js/historia.js" ></script>
+ 
  
 </body>
 </html>
