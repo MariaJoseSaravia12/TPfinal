@@ -74,7 +74,10 @@ main{
   2px 3px black ;
   
 }
-
+.tema{
+  display: flex;
+  align-items: flex-start;
+}
 
 
 /* Header con el título principal */
@@ -127,6 +130,7 @@ h2 {
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
+
 }
 .card {
   width: 450px;
@@ -141,6 +145,17 @@ h2 {
 .img-card {
   width: 100%;
   margin: 0px;
+  /*para el efecto 3d*/
+  border: 15px solid var(--colorAzul); 
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.9),
+  inset 8px 8px 12px rgba(0, 0, 0, 0.3), /* Sombra interna superior izquierda */
+  inset -8px -8px 12px rgba(255, 255, 255, 0.2); /* Sombra interna inferior derecha */ 
+    
+}
+.img-card.izq{
+  box-shadow: -20px 10px 25px rgba(0, 0, 0, 0.9), /* Mueve la sombra a la izquierda */
+  inset 8px 8px 12px rgba(0, 0, 0, 0.3), /* Mantiene efecto de relieve */
+  inset -8px -8px 12px rgba(255, 255, 255, 0.2);
 }
 .boton-ver {
   padding: 10px;
@@ -162,9 +177,87 @@ footer {
 .footer-left {
   display: flex;
   justify-content: space-between;
-  width: 300px;
+  width: 400px;
   height: 60px;
 }
+/* Contenedor del cubo dentro del footer */
+#footer-cube-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  flex-direction: column;
+  position: relative;
+}
+
+/* Cubo 3D */
+#cubo {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: mover 17s ease-in-out  infinite alternate;
+  z-index: 1;
+}
+
+/* Caras del cubo */
+.cara {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background-image: url(../assets/img/logo.png);
+  background-size: cover;
+  background-position: center;
+ border: 2px solid var(--colorBlancoFondoSombras);
+ border-radius: 2px;
+}
+#sombra {
+  position: absolute;
+  width: 140px;
+  height: 160px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0.9) 20%,
+    rgba(0, 0, 0, 0.7) 50%,
+    rgba(0, 0, 0, 0.5) 90%
+  ); /* Difuminado gradual */
+  left:20%;
+  transform: translateX(-50%) skewX(-10deg) skewY(5deg) scale(0.85); /* Inclinación más realista */
+  border-radius: 50%;
+  z-index: 0; /* Asegurar que la sombra esté detrás del cubo */
+  filter: blur(18px); /* Difuminado extra para suavidad */
+  animation: sombra 17s ease-in-out infinite alternate;
+  opacity: 0.8; /* Mantener una opacidad adecuada */
+}
+
+
+/* Posicionamiento de cada cara */
+.enfrente { transform: translateZ(40px); }
+.atras { transform: rotateY(180deg) translateZ(40px); }
+.arriba { transform: rotateX(90deg) translateZ(40px); }
+.abajo { transform: rotateX(-90deg) translateZ(40px); }
+.izquierda { transform: rotateY(-90deg) translateZ(40px); }
+.derecha { transform: rotateY(90deg) translateZ(40px); }
+
+/* Animación del cubo*/
+@keyframes mover {
+  to {
+    transform: rotateY(360deg) rotateX(360deg);
+  }
+}
+/* Animación de la sombra para que se adapte al movimiento del cubo */
+@keyframes sombra {
+  0%, 100% {
+    transform: translateX(-50%) skewX(-8deg) skewY(4deg) scale(0.8);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateX(-50%) skewX(-12deg) skewY(6deg) scale(1);
+    opacity: 0.9;
+  }
+}
+
+
+
 .titulo-foot {
   font-size: 14px;
 }
@@ -180,7 +273,12 @@ footer {
   transform: translate3d(5px, 5px, -5px);  
   transition: all 0.1s;
 }
-/*Logo*/
+.boton-ver:active.izq{
+  transform: translate3d(-5px, 5px, -5px);  
+  transition: all 0.1s;
+}
+
+/*Logo */
 
  /* Animación del marco */
 .momento1 {
@@ -224,4 +322,24 @@ footer {
   to { stroke: green; }
 }
 
+/*localStorage*/
+.fondo{
+  background-color: hsl(240, 1%, 62%);
+}
 
+.item-icono {
+  background: transparent;  
+  border: none;             
+  padding: 10px;            
+  cursor: pointer;          
+}
+
+.item-icono i {
+  color: #9304f1;  
+  font-size: 24px; 
+}
+
+
+.item-icono:hover i {
+  color: #f05bf0; 
+}

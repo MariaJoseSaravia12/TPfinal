@@ -6,6 +6,9 @@
   <link rel="stylesheet"  href="./css/index.css" >
   <link rel="stylesheet"  href="./css/juguemos.css" >  
   <link rel="icon" href="./assets/img/fondo.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
   <title>Juguemos</title>
 </head>
 <body onscroll="mostrarNav()">
@@ -15,22 +18,38 @@
   </header>
   <main>
     <h2 class="espacio-titulo">Armemos el rompecabezas y veamos qué imagen es...</h2>
-    <div class="caja-mensajes error" id="mensajes">
+    <div id="contenedor">
+      <canvas id="lienzo" width="500" height="500" style="display: none;">
+         Este navegador no soporta canvas
+      </canvas> 
+    </div>   
+    <div class="caja-mensajes error" id="mensajes"></div>       
     </div>
-    <section class="juego">
+  </div>   
+  <div class="cantidad">
+    <p>Cantidad de veces que jugaste</p>
+    <br>
+    <p id="cantidad">0</p>
+</div>
+    <!--Mensajes de partidas jugadas-->
+  
+     <!--juego-->
+     <section class="juego">
       <div class="cajas">
         <div class="caja" id="cajasoltar1"><p>Arrastre y suelte la imagen aquí</p></div>
         <div class="caja" id="cajasoltar2"><p>Arrastre y suelte la imagen aquí</p></div>
         <div class="caja" id="cajasoltar3"><p>Arrastre y suelte la imagen aquí</p></div>
-      </div>
+      </div> 
+    
       <div id="cajaimagenes">
         <img id="imagen1" src="./assets/img/rompe2.png" alt="pieza 2 del rompecabezas" draggable="true">
         <img id="imagen2" src="./assets/img/rompe1.png" alt="pieza 1 del rompecabezas" draggable="true">
         <img id="imagen3" src="./assets/img/rompe3.png" alt="pieza 3 del rompecabezas" draggable="true">
-      </div>
-    </section>
-    
-    <button class="botonesVideo reinicio" onclick="reinicio()">Reiniciar</button>
+      </div> 
+    </section>   
+
+    <button class="botonesVideo reiniciar" onclick="reinicio()">Reiniciar</button>
+  
   </main>  
   <footer></footer>
 <script src="./Js/index.js" ></script> 

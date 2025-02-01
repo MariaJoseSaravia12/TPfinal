@@ -35,17 +35,38 @@ document.addEventListener('DOMContentLoaded', () => {
       </li>
       <li class="item-menu">
         <a href="./juguemos.html" class="item-link">JUGUEMOS</a>
-      </li>
-    </ul>
+      </li>      
+    </ul>    
+    <ul class="tema">
+        <li class="item-menu">
+            <button class="item-icono" id="day" onclick="temaDia()"><span ><i class="fa-regular fa-sun"></i></span></button>
+        </li>
+        <li class="item-menu">
+            <button class="item-icono" id="night" onclick="temaNoche()"><span><i class="fa-regular fa-moon"></i></span></button>
+        </li>
+    </ul>     
   `;
 
   // Contenido del <footer>
   const footerContent = `
     <div class="footer-left">
-      <img class="logo" src="./assets/img/logo.png" alt="logo">
+         <!-- Cubo 3D dentro del footer -->
+  <div id="footer-cube-container">
+    <div id="cubo">
+      
+      <div class="cara enfrente"></div>
+      <div class="cara atras"></div>
+      <div class="cara arriba"></div>
+      <div class="cara abajo"></div>
+      <div class="cara izquierda"></div>
+      <div class="cara derecha"></div>
+    </div>
+    <div id="sombra"></div>
+  </div>
       <h3 class="titulo-blanco titulo-foot">PROGRAMACIÓN<br>E<br>HISTORIA</h3>
     </div>
     <div>Sitio con fines educativos - Creado por M.Victoria Lopez</div>
+   
   `;
 
   //Agregar contenido dinámicamente al nav y footer
@@ -66,4 +87,23 @@ const mostrarNav=()=>{
       document.querySelector("nav").classList.remove("nuevoNav")
 
   };
+};
+//localStorage
+let infoTema = localStorage.getItem("tema");
+
+if (infoTema === "noche") {
+  document.body.classList.add("fondo");
+  document.querySelectorAll(".card").forEach(elemento => elemento.classList.add("fondo"));
+}
+
+const temaNoche = () => {
+  document.body.classList.add("fondo");
+  document.querySelectorAll(".card").forEach(elemento => elemento.classList.add("fondo"));
+  localStorage.setItem("tema", "noche");
+};
+
+const temaDia = () => {
+  document.body.classList.remove("fondo");
+  document.querySelectorAll(".card").forEach(elemento => elemento.classList.remove("fondo"));
+  localStorage.setItem("tema", "dia");
 };

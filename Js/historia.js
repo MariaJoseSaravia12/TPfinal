@@ -1,6 +1,14 @@
 let video = document.querySelectorAll('video')[0];
 let intervalo;
 
+// Función para reproducir el sonido del clic
+const sonidoBoton = () => {
+    let audio = document.getElementById("audioBoton");
+    if (audio) {
+        audio.currentTime = 0; 
+        audio.play();
+    }
+};
 //Función corregida para formatear el tiempo correctamente
 let transformarTiempo = (tiempo) => {
     let minutos = Math.floor(tiempo / 60);
@@ -69,3 +77,21 @@ const mutear = () => {
 if (video) {
     video.addEventListener("loadedmetadata", mostrar);
 };
+//animacion scroll
+function animarScroll() {
+    const cards = document.querySelectorAll(".card-hist");
+    const triggerBottom = window.innerHeight * 0.8; 
+    const triggerTop = window.innerHeight * 0.1;
+   
+  
+    cards.forEach((card) => {
+      const cardTop = card.getBoundingClientRect().top;
+  
+      if (cardTop < triggerBottom) {
+        card.classList.add("visible");
+      } else {
+        card.classList.remove("visible");
+      }
+    });
+  }
+  window.addEventListener("scroll", animarScroll); 

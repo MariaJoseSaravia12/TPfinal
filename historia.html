@@ -16,8 +16,9 @@
   </header >
   <main>
     <!--Primer tarjeta-->
+    
    <div class="card-hist">
-    <img src="./assets/img/1-800x534.jpg" alt="computadora antigua">
+    <img src="./assets/img/1-800x534.jpg" class="izq" alt="computadora antigua">
     <div class="card-text-section">
       <h2 class="card-title">El principio de la historia de la programación</h2>
       <p class="text-hist">
@@ -33,6 +34,7 @@
       </p>
     </div>
    </div>
+  </div>
    <!--segunada tarjeta-->
    <div class="card-hist">
     <div class="card-text-section">
@@ -54,7 +56,7 @@
   </div>
   <!--tercera tarjeta-->
   <div class="card-hist">
-    <img src="./assets/img/img-historia.jpg" alt="computadora antigua">
+    <img src="./assets/img/img-historia.jpg" class="izq" alt="computadora antigua">
    <div class="card-text-section">
        <h2 class="card-title">Los primeros lenguajes de programación</h2>
 
@@ -90,14 +92,18 @@
     </video>
 
     <div class="barra">
-        <div class="botonera">
-            <button onclick="reproducir()" class="botonesVideo">PLAY
+        <div class="botonera" >
+          <audio id="audioBoton" preload="auto">
+              <source src="./assets/audio/mouse-click.mp3" type="audio/mp3" >            	          
+          </audio>
+            
+            <button onclick="sonidoBoton(); reproducir() " class="botonesVideo">PLAY
                 <img src="./assets/img/play.svg" alt="Inicio del video">
             </button>
-            <button onclick="pausar()" class="botonesVideo">PAUSE
+            <button onclick="sonidoBoton(); pausar() " class="botonesVideo">PAUSE
                 <img src="./assets/img/pausa.svg" alt="Pausa del video">
             </button>  
-            <button onclick="mutear()" class="botonesVideo" id="muteButton">
+            <button onclick="sonidoBoton(); mutear()" class="botonesVideo" id="muteButton">
                 <i class="fa-solid fa-volume-xmark" style="display: none;" id="iconMute"></i>
                 <i class="fa-solid fa-volume-high" id="iconUnmute"></i>
             </button>
